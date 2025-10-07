@@ -4,8 +4,8 @@ import Logo from "../../assets/logo.png";
 const Navbar = () => {
   const navLinkStyles = ({ isActive }) => {
     return isActive
-      ? "font-bold underline underline-offset-4 decoration-[#632EE3] bg-clip-text text-transparent bg-[linear-gradient(125deg,#632EE3_5.68%,#9F62F2_88.38%)]" // Styles for active link
-      : "text-black"; // Styles for inactive link
+      ? "font-bold underline underline-offset-4 decoration-[#632EE3] bg-clip-text text-transparent bg-[linear-gradient(125deg,#632EE3_5.68%,#9F62F2_88.38%)]"
+      : "text-black";
   };
   const links = (
     <>

@@ -3,9 +3,11 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Header/Navbar";
 const Root = () => {
   return (
-    <div className="">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Outlet />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
