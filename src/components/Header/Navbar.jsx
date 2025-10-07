@@ -1,12 +1,33 @@
+import { VscGithub } from "react-icons/vsc";
+import { Link, NavLink } from "react-router";
+import Logo from "../../assets/logo.png";
 const Navbar = () => {
+  const navLinkStyles = ({ isActive }) => {
+    return isActive
+      ? "font-bold underline underline-offset-4 decoration-[#632EE3] bg-clip-text text-transparent bg-[linear-gradient(125deg,#632EE3_5.68%,#9F62F2_88.38%)]" // Styles for active link
+      : "text-black"; // Styles for inactive link
+  };
   const links = (
     <>
-      <li className="m-2">Home</li>
-      <li className="m-2">About</li>
+      <li>
+        <NavLink to="/" className={navLinkStyles}>
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/apps" className={navLinkStyles}>
+          Apps
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/installation" className={navLinkStyles}>
+          Installation
+        </NavLink>
+      </li>
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm md:px-15">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,13 +54,29 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Boi Poka</a>
+        <Link to="/" className="text-2xl font-bold">
+          <div className="flex items-center">
+            <img
+              src={Logo}
+              alt="HERO IO"
+              className="h-[30px]  md:h-[40px] w-[30px] md:w-[40px] mr-2"
+            />
+            <span className="decoration-[#632EE3] bg-clip-text text-transparent bg-[linear-gradient(125deg,#632EE3_5.68%,#9F62F2_88.38%)] text-xl md:text-2xl">
+              HERO IO
+            </span>
+          </div>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link
+          to="https://github.com/sabbir534"
+          className="btn opacity-90 bg-[linear-gradient(125deg,#632EE3_5.68%,#9F62F2_88.38%)] text-white rounded-1xl px-4 py-2"
+        >
+          <VscGithub /> Contribute
+        </Link>
       </div>
     </div>
   );

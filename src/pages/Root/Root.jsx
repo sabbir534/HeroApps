@@ -3,7 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Header/Navbar";
 const Root = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="">
       <Navbar />
       <Outlet />
       <Footer />
