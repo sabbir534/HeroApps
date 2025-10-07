@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import AppStoreBtn from "../../assets/appleBtn.png";
 import PlayStoreBtn from "../../assets/gstoreBtn.png";
 import HeroImage from "../../assets/hero.png";
@@ -17,14 +18,20 @@ const Banner = () => {
         digital experiences that truly make an impact.
       </p>
       <div className="pb-10 pt-6">
-        <button className="mr-4 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl btn-outline border-gray-400 hover:bg-gray-200 hover:border-gray-400">
+        <Link
+          to="https://play.google.com/"
+          className="mr-4 btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl btn-outline border-gray-400 hover:bg-gray-200 hover:border-gray-400"
+        >
           <img src={PlayStoreBtn} alt="" className="h-4 md:h-8 w-4 md:w-8" />
           Google Play
-        </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl btn-outline border-gray-400 hover:bg-gray-200 hover:border-gray-400">
+        </Link>
+        <Link
+          to="https://www.apple.com/app-store/"
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl btn-outline border-gray-400 hover:bg-gray-200 hover:border-gray-400"
+        >
           <img src={AppStoreBtn} alt="" className="h-4 md:h-8 w-4 md:w-8" />
           Apple Store
-        </button>
+        </Link>
       </div>
       <img src={HeroImage} alt="" className="md:max-w-[50rem]" />
     </div>
