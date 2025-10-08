@@ -8,7 +8,7 @@ const formatNumber = (num) => {
     return num;
 };
 const getInstalledApps = () => {
-    const installedApps = localStorage.getItem('installedList');
+    const installedApps = localStorage.getItem('installedApps');
     if (installedApps) {
         return JSON.parse(installedApps);
     } else {

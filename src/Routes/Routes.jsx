@@ -1,11 +1,10 @@
 import { createBrowserRouter } from "react-router";
-import Apps from "../pages/Apps/Apps";
+import AppDetails from "../pages/AppDetails/AppDetails";
+import AppsPage from "../pages/AppsPage/AppsPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import Installation from "../pages/Installation/Installation";
 import Root from "../pages/Root/Root";
-import AppDetails from "../pages/AppDetails/AppDetails";
-import AppsPage from "../pages/AppsPage/AppsPage";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +30,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/installation",
+        loader: () => fetch("/appsData.json"),
         Component: Installation,
       },
 
