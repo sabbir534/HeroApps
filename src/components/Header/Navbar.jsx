@@ -27,7 +27,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm md:px-15">
+    <div className="navbar bg-base-100 shadow-sm px-10 md:px-15">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -59,7 +59,7 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="HERO IO"
-              className="h-[30px]  md:h-[40px] w-[30px] md:w-[40px] mr-2"
+              className="md:block md:h-[40px]  md:w-[40px] mr-2 hidden "
             />
             <span className="decoration-[#632EE3] bg-clip-text text-transparent bg-[linear-gradient(125deg,#632EE3_5.68%,#9F62F2_88.38%)] text-xl md:text-2xl">
               HERO IO
