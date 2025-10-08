@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { toast, ToastContainer } from "react-toastify";
 import {
   Bar,
   BarChart,
@@ -17,10 +19,42 @@ const AppDetails = () => {
   const { id } = useParams();
   const data = useLoaderData();
   const singleApp = data.find((app) => app.id === parseInt(id));
+  const [isInstalled, setIsInstalled] = useState(false);
+  const notify = () => toast("App installed successfully!");
+  useEffect(() => {
+    const installedApps =
+      JSON.parse(localStorage.getItem("installedApps")) || [];
+    if (installedApps.includes(id)) {
+      setIsInstalled(true);
+    }
+  }, [id]);
+
+  const handleInstall = (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    const installedApps =
+      JSON.parse(localStorage.getItem("installedApps")) || [];
+    const updatedInstalledApps = [...installedApps, id];
+    localStorage.setItem("installedApps", JSON.stringify(updatedInstalledApps));
+    setIsInstalled(true);
+
+    notify();
+  };
   console.log(singleApp);
   const reversedRatings = [...singleApp.ratings].reverse();
   return (
     <div className="flex flex-col gap-8 bg-gray-200 px-4 sm:px-10 py-10">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="flex flex-col md:flex-row gap-10">
         <img
           src={singleApp.image}
@@ -70,8 +104,16 @@ const AppDetails = () => {
               </p>
             </div>
           </div>
-          <button className="mt-6 self-center md:self-start w-full md:w-auto opacity-90 bg-[#00D390] hover:bg-[#00b87b] transition-colors text-white text-xl px-8 py-3 font-bold rounded-md">
-            Install Now ({singleApp.size} MB)
+          <button
+            onClick={handleInstall}
+            disabled={isInstalled}
+            className={`mt-6 self-center md:self-start w-full md:w-auto opacity-90 cursor-pointer transition-colors text-white text-xl px-8 py-3 font-bold rounded-md ${
+              isInstalled
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-[#00D390] hover:bg-[#00b87b]"
+            }`}
+          >
+            {isInstalled ? "Installed" : `Install Now (${singleApp.size} MB)`}
           </button>
         </div>
       </div>

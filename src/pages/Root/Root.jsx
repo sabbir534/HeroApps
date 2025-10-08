@@ -1,4 +1,5 @@
 import { Outlet, useNavigation } from "react-router";
+import { ToastContainer } from "react-toastify";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Header/Navbar";
 import LoadingSpinner from "../../components/Spinner/LoadingSpinner";
@@ -14,6 +15,7 @@ const Root = () => {
         <Outlet />
       </main>
       <Footer />
+      <ToastContainer />
     </div>
   );
 };

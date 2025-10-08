@@ -4,6 +4,7 @@ import RatingImage from "../../assets/icon-ratings.png";
 import { formatNumber } from "../../utils/appUtil";
 const SingleApp = ({ singleApp }) => {
   const { id, title, image, downloads, ratingAvg } = singleApp;
+
   return (
     <Link to={`/appDetails/${id}`}>
       <div className="card bg-base-100 shadow-sm">

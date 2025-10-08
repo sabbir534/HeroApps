@@ -21,7 +21,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/installation" className={navLinkStyles}>
-          Installation
+          My Installation
         </NavLink>
       </li>
     </>

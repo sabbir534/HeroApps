@@ -7,4 +7,24 @@ const formatNumber = (num) => {
     }
     return num;
 };
-export { formatNumber };
+const getInstalledApps = () => {
+    const installedApps = localStorage.getItem('installedList');
+    if (installedApps) {
+        return JSON.parse(installedApps);
+    } else {
+        return [];
+    }
+}
+
+const addToStoredDB = (id) => {
+    const installedApps = getInstalledApps();
+    if (installedApps.includes(id)) {
+        alert('Apps already installed');
+        return;
+    }
+    installedApps.push(id);
+    console.log(installedApps);
+    localStorage.setItem('installedList', JSON.stringify(installedApps));
+}
+export { addToStoredDB, formatNumber, getInstalledApps };
+
