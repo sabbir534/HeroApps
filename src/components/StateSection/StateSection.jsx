@@ -4,7 +4,7 @@ const StateSection = () => {
       <h1 className="text-white text-center text-4xl font-bold">
         Trusted by Millions, Built for You
       </h1>
-      <div className="flex flex-wrap justify-center gap-30 mt-10">
+      <div className="flex flex-wrap justify-center flex-col md:flex-row gap-15 md:gap-30 mt-10">
         <div className="flex flex-col items-center justify-center gap-4">
           <p className="text-white text-center text-sm opacity-50">
             Total Downloads
