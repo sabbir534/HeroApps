@@ -62,7 +62,7 @@ const AppDetails = () => {
           className="w-full max-w-[200px] md:max-w-[256px] aspect-square object-cover rounded-lg self-center"
         />
 
-        <div className="flex-grow flex flex-col justify-between">
+        <div className="flex-grow flex flex-col items-center md:items-start justify-between">
           <h1 className="text-3xl font-bold">{singleApp.title}</h1>
           <p className="mt-1">
             <span className="text-gray-600"> Developed by </span>
@@ -137,8 +137,10 @@ const AppDetails = () => {
         <div className="divider"></div>
       </div>
       <div>
-        <h2 className="text-xl font-bold">Description</h2>
-        <p className="mt-2 text-gray-700">{singleApp.description}</p>
+        <h2 className="text-xl font-bold px-3 md:px-0">Description</h2>
+        <p className="mt-2 text-gray-700 text-justify px-3 md:px-0">
+          {singleApp.description}
+        </p>
       </div>
     </div>
   );
