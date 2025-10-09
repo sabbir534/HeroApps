@@ -1,4 +1,4 @@
-# App Market Explorer
+# Hero Apps
 
 # Description
 
